@@ -1,14 +1,14 @@
+import "./CourseList.css"
+
 const Course = ({course}) => {
     return (
-        <div className="card">
-            <div className="course-number">
-                {course.term} CS {course.number}
+        <div className="card" style={{width: '14em', height: "16em"}}>
+            <div className="card-body">
+                <h4>{course.term} CS {course.number}</h4>
+                <p>{course.title}</p>
             </div>
-            <div className="course-name">
-                {course.title}
-            </div>
-            <div className="course-times">
-                {course.meets}
+            <div className="card-footer">
+                <p>{course.meets}</p>
             </div>
         </div>
     );

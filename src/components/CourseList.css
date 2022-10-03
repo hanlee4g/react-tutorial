@@ -1,4 +1,17 @@
 .courses {
     display: flex;
     flex-direction: row;
+    margin: 1em;
+}
+
+.courses * {
+    margin: 0.2em;
+}
+
+.card {
+    border-width: 0.2em;
+}
+
+.card-footer {
+    background-color: white;
 }
