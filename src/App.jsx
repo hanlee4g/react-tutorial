@@ -16,7 +16,7 @@ const Main = () => {
   if (!data) return <h1>No user data found</h1>;
 
   return (
-    <div className='container'>
+    <div className='page-container'>
       <h1>{data.title}</h1>
       <CourseList courses = {data.courses} />
     </div>
