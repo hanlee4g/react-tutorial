@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Banner from './components/Banner.jsx'
-import CourseList from './components/CourseList.jsx'
+import TermPage from './components/TermPage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useJsonQuery } from './utilities/fetch';
+import { useState } from 'react';
 
 const Main = () => {
   const [data, isLoading, error] = useJsonQuery('https://courses.cs.northwestern.edu/394/guides/data/cs-courses.php');
@@ -18,7 +16,7 @@ const Main = () => {
   return (
     <div className='page-container'>
       <h1>{data.title}</h1>
-      <CourseList courses = {data.courses} />
+      <TermPage courses = {data.courses} />
     </div>
   );
 }
@@ -32,6 +30,5 @@ const App = () => (
     </div>
   </QueryClientProvider>
 );
-
 
 export default App;
