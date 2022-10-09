@@ -7,7 +7,8 @@
     object-fit: cover;
 }
 
-.card.m2.p2 .selected {
-    background-color: green;
-    
+#selected {
+    color: green;
+    border-color: green;
+    border-width: 0.1rem;
 }
