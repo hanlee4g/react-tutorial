@@ -1,25 +1,34 @@
 import "./CourseList.css"
 
-const Course = ({course, selection}) => {
+const Course = ({course, id, selection, selected, toggleSelected}) => {
     if( selection === course.term) {
         return (
-            <div className="card m-2 p-2" style={{width: '14em', height: "16em"}}>
-                <div className="card-body">
-                    <h4>{course.term} CS {course.number}</h4>
-                    <p>{course.title}</p>
-                </div>
-                <div className="card-footer" style={{backgroundColor: 'white'}}>
-                    <p>{course.meets}</p>
-                </div>
+            <div className="card m-2 p-2" id={selected.includes(id) ? 'selected' : ''} onClick={() => toggleSelected(id)}>
+                    <div className="card-body">
+                        <h4>{course.term} CS {course.number}</h4>
+                        <p>{course.title}</p>
+                    </div>
+                    <div className="card-footer" style={{backgroundColor: 'white'}}>
+                        <p>{course.meets}</p>
+                    </div>
             </div>
         );
     }
 }
 
-const CourseList = ({courses, selection}) => {
+const CourseList = ({courses, selection, selected, toggleSelected}) => {
     return (
         <div className = "courses">
-        { Object.entries(courses).map(([id, course]) => <Course key={id} course={course} selection={selection}/>) }
+        { Object.entries(courses).map(([id, course]) => 
+        <Course
+            key={id}
+            id={id}
+            course={course}
+            selection={selection}
+            selected={selected}
+            toggleSelected={toggleSelected}
+            />
+        )}
       </div>
     );
 }

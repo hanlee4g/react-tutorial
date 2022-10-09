@@ -6,3 +6,8 @@
 .card-footer {
     object-fit: cover;
 }
+
+.card.m2.p2 .selected {
+    background-color: green;
+    
+}
