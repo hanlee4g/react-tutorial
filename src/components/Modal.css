@@ -1,27 +1,17 @@
 .modal {
-    position: fixed;
-    left:25%;
-    width: 50%;
-    height: auto;
-    z-index: 1;
     display: block;
     visibility: hidden;
-    opacity: 1;
-    border-radius: 0.5rem;
-    overflow: auto;
   }
-
+  
   .modal-show {
     visibility:visible;
-    background-color: rgb(149, 235, 175);
-    transition: opacity 0.2s linear;
-    border: 2px solid #888;
+    background-color: rgba(169, 169, 169, 0.8);
+    transition: opacity 0.2s linear; 
   } 
   
   .modal-content  {
-    opacity: 0;
-    margin: 1rem;
-}
+    opacity: 0; 
+  }
   
   .modal-show .modal-content  {
     opacity: 1; 
@@ -31,4 +21,3 @@
   .modal-header {
     margin-left: auto;
   }
-  
