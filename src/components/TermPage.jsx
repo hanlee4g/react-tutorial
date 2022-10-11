@@ -1,8 +1,5 @@
 import { useState } from "react";
 import CourseList from "./CourseList"
-import Modal from "./Modal";
-import Schedule from "./Schedule";
-import "./TermPage.css"
 
 const terms = {
   Fall: 'Fall',
@@ -31,10 +28,6 @@ const TermSelector = ({selection, setSelection}) => (
 const TermPage = ({courses}) => {
   const [selection, setSelection] = useState(() => Object.keys(terms)[0]);
   const [selected, setSelected] = useState([]);
-
-  const [open, setOpen] = useState(false);
-  const openModal = () => setOpen(true);
-  const closeModal = () => setOpen(false);
   
   const toggleSelected = (course) => setSelected(
     selected.includes(course)
@@ -44,15 +37,7 @@ const TermPage = ({courses}) => {
   
   return (
     <div>
-      <nav className="nav-buttons">
-        <TermSelector selection={selection} setSelection={setSelection}/>
-        <button className="btn btn-outline-dark" onClick={openModal}>View Your Schedule</button>
-      </nav>
-
-      <Modal open={open} close={closeModal}>
-        <Schedule courses={courses} selected={selected}/>
-      </Modal>
-      
+      <TermSelector selection={selection} setSelection={setSelection} />
       <CourseList
         courses={courses}
         selection={selection}
