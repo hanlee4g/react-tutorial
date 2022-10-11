@@ -1,9 +1,10 @@
-import './App.css';
-import TermPage from './components/TermPage.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import './App.css';
+import TermPage from './components/TermPage.jsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useJsonQuery } from './utilities/fetch';
+
 import { useState } from 'react';
 
 const Main = () => {
