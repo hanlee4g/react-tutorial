@@ -1,7 +1,5 @@
 import { useState } from "react";
-import CourseList from "./CourseList";
-import Schedule from "./Schedule";
-import ScheduleList from "./ScheduleList";
+import CourseList from "./CourseList"
 
 const terms = {
   Fall: 'Fall',
@@ -30,10 +28,6 @@ const TermSelector = ({selection, setSelection}) => (
 const TermPage = ({courses}) => {
   const [selection, setSelection] = useState(() => Object.keys(terms)[0]);
   const [selected, setSelected] = useState([]);
-
-  const [open, setOpen] = useState(false);
-  const openSchedule = () => setOpen(true);
-  const closeSchedule = () => setOpen(false);
   
   const toggleSelected = (course) => setSelected(
     selected.includes(course)
@@ -44,12 +38,6 @@ const TermPage = ({courses}) => {
   return (
     <div>
       <TermSelector selection={selection} setSelection={setSelection} />
-      <button className="btn btn-outline-dark" onClick={openSchedule}>Schedule</button>
-
-      <Schedule open={open} close={closeSchedule}>
-        <ScheduleList selected={selected}/>
-      </Schedule>
-
       <CourseList
         courses={courses}
         selection={selection}
