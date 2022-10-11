@@ -1,0 +1,5 @@
+.nav-buttons {
+    width:fill;
+    display: flex;
+    justify-content: space-between;
+}
